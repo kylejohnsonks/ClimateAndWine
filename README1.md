@@ -59,17 +59,17 @@
 ![This is an image](https://raw.githubusercontent.com/BrenyaSkaggs/Group2/bskaggs/ERD.png)
 
 
-## Raw Weather Data
+## *Raw Weather Data*
 
 
 
 
-## Raw Wine Data
+## *Raw Wine Data*
 
 
 
 
-## Combined Weather and Wine Data
+## *Combined Weather and Wine Data*
 
 
 
