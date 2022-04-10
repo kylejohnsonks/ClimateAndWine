@@ -21,14 +21,21 @@ url = '/predict/';
 for (const value in values) {
   url+=values[value]+'/';
 }
-console.log(url);
+url=url.slice(0,-1);
+console.log(url)
+// window.location.href=url;
+fetch(url)
+  .then(response => response.json())
+  // .then(result => console.log(result))
+  .then(result=>document.getElementById("result").innerHTML=result);
 }
+
 //watch for Button click 
 d3.select("a").on("click", ML);
 
 //add varieties and provinces variables
 var varieties = ['Barbera','Bordeaux-style Red Blend','Bordeaux-style White Blend','Cabernet Franc','Cabernet Sauvignon','Champagne Blend','Chardonnay','Corvina','Dolcetto','Garganega','Gewurztraminer','Glera','Grenache','Malbec','Meritage','Merlot','Moscato','Mourvedre','Nebbiolo','Nero dAvola','Petit Verdot','Petite Sirah','Pinot Blanc','Pinot Grigio','Pinot Gris','Pinot Noir','Red Blend','Rhone-style Red Blend','Rhone-style White Blend','Riesling','Rose','Sangiovese','Sangiovese Grosso','Sauvignon Blanc','Sparkling Blend','Syrah','Tempranillo','Vermentino','Viognier','White Blend','Zinfandel']
-var provinces = ['Oregon', 'Alsace', 'California', 'Sicilia', 'Aquitaine','Washington', 'Burgundy', 'New York', 'Tuscany', 'Piemonte','Veneto','Champagne-Ardenne']
+var provinces = ['Alsace','Aquitaine','Burgundy','California','Champagne-Ardenne','New York','Oregon','Piemonte','Sicilia','Tuscany','Veneto','Washington']
 
 //build provinces options list
 for (i=0; i < provinces.length; i++){

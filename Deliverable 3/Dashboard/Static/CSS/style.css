@@ -1,7 +1,12 @@
 body {
-  background-color: #38042F;  }
+  background-color: #38042F;  
+}
+
 .jumbotron {    
-  color: #000000;    
+  color: #000000; 
+  background-image: 
   background-size: 25% 25%;    
   text-align: center;  
 }
+
+#mapid { height: 500px; }
