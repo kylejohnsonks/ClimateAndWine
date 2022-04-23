@@ -15,9 +15,9 @@ The topic of this project is predicting the quality of wine based on environment
 
 ## Dashboard
 
-[Dashboard Link](https://group2winos.herokuapp.com)
+[Dashboard Link](https://wineclimate.herokuapp.com/)
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Dashboard.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/Dashboard.png)
 
 ## Data Source 
  
@@ -67,7 +67,7 @@ The topic of this project is predicting the quality of wine based on environment
 
 * *Sicily, Italy*
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Map.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/Map.png)
 
 ## Technologies, Language, Tools 
 
@@ -114,13 +114,13 @@ GitHub
 
 ## Machine Learning Flow Chart
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Machine%20Learning%20Flow%20Chart.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/Machine%20Learning%20Flow%20Chart.png)
 
 
 
 # **Data Exploration** 
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Machine%20Learning/Updated_weatherdata_winedata_ERD.PNG)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Machine%20Learning/Updated_weatherdata_winedata_ERD.PNG)
 
 
 
@@ -150,18 +150,18 @@ Historical and projected precipitation and temperature were extracted from the c
 
 Each download appeared like the following with data from 1901 - 2020 for the country as a whole and for each province.
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/ExampleDownload.PNG)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/ExampleDownload.PNG)
 
 Pandas was used to rearrange the data to put in a form that we could easily join to the wine data.
 
 Here is the resulting DataFrame that got saved as a CSV file:
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/ExampleDF.PNG)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/ExampleDF.PNG)
 
 
 This resulted in the creation of three CSV files containing only the combined historical data, only the combined projected data and then the combined historical and projected data resulting in an output similar to the following: 
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/WeatherOutputExample.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/WeatherOutputExample.png)
 
 We used the historical combined data in our analysis of wine quality; however, the other two files may be of use as well. These files have been uploaded to a bucket at S3.
 
@@ -172,7 +172,7 @@ We used the historical combined data in our analysis of wine quality; however, t
 
 The raw wine data, which contain over 80,000 wine reviews, came from Kaggle. This dataset contains varieties of wine along with other information such where and when they came from, what wineries were used, how much they cost and what the review rating is. The dataset initially looked like this:
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Raw_wine_data.PNG)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/Raw_wine_data.PNG)
 
 The data cleaning for the wine reviews was minimal compared to what was needed for the weather data. There is only one file to work with, so changes were made using Pandas. To complete this we had to filter the title and regions. Records prior to 1990 were dropped along with those without years. The regions were then renamed to match the weather data.
 
@@ -180,7 +180,7 @@ To help reduce noise we dropped rows where prices was empty or less than 101, we
 
 The final wine dataset appears as follows:
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Final_wine_DF.PNG)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/Final_wine_DF.PNG)
 
 Like for the weather data, this DataFrame was exported to CSV and uploaded to AWS S3.
 
@@ -202,25 +202,25 @@ The original two datasets we used were cleaned and formatted then imported into 
 
 We began the process with our library imports, creating a DB instance, and dropping any unnecessary or frivolous columns. We decided to drop all columns except points, price, province, variety, precipitation, and temperature.
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/MLDataset.PNG)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/MLDataset.PNG)
 
 We then encoded the columns of 'province', and 'variety' in order to get categorical values for these columns.
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/encode1.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/encode1.png)
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/encode2.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/encode2.png)
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/endf.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/endf.png)
 
 We then scaled the columns of *'precipitation'*, *'temperature'*, and *'price'* using 'MinMaxScaler' from SKLearn, this ensured none of our variables showed inflated influence on the results of our model.
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/mmsc.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/mmsc.png)
 
 We then used the 'points' column as our model's target and all other columns are our variables.
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/X.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/X.png)
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/y.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/y.png)
 
 
 
@@ -234,17 +234,17 @@ Due to the scores we tried to determine the importance of all our features, and 
 
 Our mean_squared_error improved somewhat from 5.7334 to 6.17244, however our R_2 score decreased from .33225 to .28113.
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/r2score.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/r2score.png)
 
 ## **Deep Learning** 
 
 Due to the ineffectiveness of our Linear Regression Model we then tried our hand at using a Deep Learning Model. Our model set-up involved the three input features from second iteration of linear regression. We had two hidden layers with 20, and 15 nodes respectively. And we used 'Relu' and 'Sigmoid' activation functions 
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/DLMoutput.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/DLMoutput.png)
 
 After compiling and fitting our model we ran it with 10 training epochs with the following results. 
 
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/deep_learning_accuracy.png)
+![This is an image](https://github.com/kylejohnsonks/ClimateAndWine/blob/main/Resources/deep_learning_accuracy.png)
 
 
 
