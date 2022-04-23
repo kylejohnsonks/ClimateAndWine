@@ -13,6 +13,11 @@ The topic of this project is predicting the quality of wine based on environment
 * What affect will future changes in rainfall and temps have on wine quality from various regions?
 * Are new regions poised to emerge as premiere locations for growing grapes and prducing wine?
 
+## Dashboard
+
+[Dashboard Link](https://group2winos.herokuapp.com)
+
+![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Dashboard.png)
 
 ## Data Source 
  
@@ -64,11 +69,6 @@ The topic of this project is predicting the quality of wine based on environment
 
 ![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Map.png)
 
-
-
-
-
-
 ## Technologies, Language, Tools 
 
 Python version 3.8.8
@@ -110,15 +110,6 @@ GitHub
 ## Google Slides  
 
 [URL](https://docs.google.com/presentation/d/1nReyD5BZ179vePjs78I2nPNtlWJBdKqsc9oTfwqkcm8/edit?usp=sharing)
-
-
-## Dashboard
-
-[URL](https://group2winos.herokuapp.com)
-
-
-
-![This is an image](https://github.com/kylejohnsonks/Group2/blob/main/Resources/Dashboard.png)
 
 
 ## Machine Learning Flow Chart
